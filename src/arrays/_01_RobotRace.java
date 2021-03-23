@@ -24,13 +24,16 @@ public class _01_RobotRace {
 	//5. use another for loop to iterate through the array and make each robot move 
 	//   a random amount less than 50.
 		Random random = new Random();
+		boolean racing = true;
 
-		while(robots[1].getY() < 0 && robots[2].getY() < 0) {
+		while(racing) {
 			for(int i = 0; i < robots.length; i++) {
 				robots[i].move(random.nextInt(50));
+				if(robots[i].getX() < 0) {
+					break;
+				}				
 			}
 		}
-
 
 	//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
 
