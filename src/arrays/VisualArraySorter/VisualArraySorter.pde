@@ -13,6 +13,7 @@ void setup() {
 
   //4. initialize the ints in the array with random numbers
   //   from 0 to the built in height variable
+  randomize();
 
   //5. call the noStroke() method
   noStroke();
@@ -23,7 +24,7 @@ void draw() {
   background(214, 252, 255);
 
   //7. set the color for your graph
-  color(255, 214, 227);
+  fill(255, 214, 227);
 
   //8. draw a rectangle for each int in your array.
   //   the x value will be the current index in the array
@@ -31,7 +32,7 @@ void draw() {
   //   the width is 1 (one)
   //   the height is negative the value of the element at the current index of the array
   for (int i = 0; i < numbers.length; i++) {
-    rect(i, height, 1, -i);
+    rect(i, height, 1, -numbers[i]);
   }
 
   //9. call the stepSort method
